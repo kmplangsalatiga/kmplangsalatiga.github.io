@@ -1,6 +1,12 @@
+/* AlfandoXeon2025
+Code With Logic, Not Love
+ */
+
+
+
 :root {
-    --primary-color: #FFBF00; /* Amber/Gold */
-    --secondary-color: #DAA520; /* Goldenrod */
+    --primary-color: #FFBF00; 
+    --secondary-color: #DAA520; 
     --text-color: #333;
     --light-text-color: #f8f9fa;
     --bg-light: #f8f9fa;
@@ -9,16 +15,19 @@
     --card-bg-dark: #1e1e1e;
     --border-color: #e0e0e0;
     --border-color-dark: #333;
+    --placeholder-color: #6c757d;
+    --placeholder-color-dark: #8a8a8a;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
 
-/* Dark theme variables */
+
 body.dark-theme {
     --text-color: #f8f9fa;
     --bg-light: var(--bg-dark);
     --card-bg-light: var(--card-bg-dark);
     --border-color: var(--border-color-dark);
+    --placeholder-color: var(--placeholder-color-dark);
 }
 
 html {
@@ -32,7 +41,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- Navigation Bar --- */
+
 .navbar {
     transition: all 0.3s ease-in-out;
     background-color: rgba(0, 0, 0, 0.3);
@@ -85,7 +94,6 @@ body {
     color: var(--light-text-color);
 }
 
-/* --- Hero Section --- */
 #hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/image/thumb.jpg') no-repeat center center/cover;
@@ -119,7 +127,7 @@ body {
     box-shadow: 0 8px 25px rgba(255, 191, 0, 0.4);
 }
 
-/* --- Section Styles --- */
+
 .section-title {
     font-family: var(--font-heading);
     font-weight: 700;
@@ -136,7 +144,7 @@ body {
     color: var(--light-text-color);
 }
 
-#tentang, #galeri {
+#tentang, #galeri, #pendaftaran {
     background-color: var(--bg-light);
 }
 
@@ -144,7 +152,7 @@ body {
     background-color: var(--bg-light);
 }
 
-/* --- Feature Cards --- */
+
 .feature-card {
     border: 1px solid var(--border-color);
     border-radius: 15px;
@@ -163,18 +171,18 @@ body {
     color: var(--primary-color);
 }
 
-/* --- New Gallery Styles --- */
+
 .horizontal-scroll-wrapper {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     padding: 1rem 0;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none; 
 }
 
 .horizontal-scroll-wrapper::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
+    display: none; 
 }
 
 .gallery-item {
@@ -216,7 +224,7 @@ body {
     }
 }
 
-/* --- Aesthetic Modal Style --- */
+
 .modal-content {
     background-color: var(--card-bg-dark);
     color: #fff;
@@ -247,9 +255,9 @@ body {
     font-style: italic;
 }
 
-/* --- Footer / Kontak --- */
+
 #kontak {
-    background-color: #0f172a; /* Deep blue-gray */
+    background-color: #0f172a; 
 }
 
 .social-icons .social-icon {
@@ -269,3 +277,29 @@ body {
     background-color: var(--secondary-color);
     transform: translateY(-5px);
 }
+
+
+.form-control {
+    background-color: var(--card-bg-light);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.form-control:focus {
+    background-color: var(--card-bg-light);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 191, 0, 0.25);
+}
+
+.form-label {
+    color: var(--text-color);
+}
+
+.form-control::placeholder {
+    font-style: italic;
+    color: var(--placeholder-color);
+}
+
+
+/* AlfandoXeon2025 */
