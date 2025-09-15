@@ -4,8 +4,21 @@
     --text-color: #333;
     --light-text-color: #f8f9fa;
     --bg-light: #f8f9fa;
+    --bg-dark: #121212;
+    --card-bg-light: #fff;
+    --card-bg-dark: #1e1e1e;
+    --border-color: #e0e0e0;
+    --border-color-dark: #333;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
+}
+
+/* Dark theme variables */
+body.dark-theme {
+    --text-color: #f8f9fa;
+    --bg-light: var(--bg-dark);
+    --card-bg-light: var(--card-bg-dark);
+    --border-color: var(--border-color-dark);
 }
 
 html {
@@ -15,7 +28,8 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--text-color);
-    background-color: #f9f9f9; /* Slightly off-white background */
+    background-color: var(--bg-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* --- Navigation Bar --- */
@@ -55,6 +69,20 @@ body {
 
 .nav-link:hover, .nav-link.active {
     color: var(--secondary-color) !important;
+}
+
+.dropdown-menu {
+    background-color: var(--card-bg-light);
+    border: 1px solid var(--border-color);
+}
+
+.dropdown-item {
+    color: var(--text-color);
+}
+
+.dropdown-item:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
 }
 
 /* --- Hero Section --- */
@@ -108,12 +136,22 @@ body {
     color: var(--light-text-color);
 }
 
+#tentang, #galeri {
+    background-color: var(--bg-light);
+}
+
+#mengapa {
+    background-color: var(--bg-light);
+}
+
 /* --- Feature Cards --- */
 .feature-card {
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: var(--card-bg-light);
+    color: var(--text-color);
 }
 
 .feature-card:hover {
@@ -180,14 +218,14 @@ body {
 
 /* --- Aesthetic Modal Style --- */
 .modal-content {
-    background-color: #1a1a1a;
+    background-color: var(--card-bg-dark);
     color: #fff;
-    border: none;
+    border: 1px solid var(--border-color-dark);
     border-radius: 10px;
 }
 
 .modal-header {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--border-color-dark);
 }
 
 .modal-title {

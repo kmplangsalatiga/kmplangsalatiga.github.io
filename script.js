@@ -32,3 +32,34 @@ galleryModal.addEventListener('show.bs.modal', event => {
   modalImage.alt = imageAlt;
   modalCaption.textContent = imageAlt;
 });
+
+// Theme switcher
+const themeSwitcher = document.querySelectorAll('[data-theme]');
+const body = document.getElementById('body-theme');
+const storedTheme = localStorage.getItem('theme');
+
+const setDarkTheme = () => {
+    body.classList.add('dark-theme');
+    localStorage.setItem('theme', 'dark');
+}
+
+const setLightTheme = () => {
+    body.classList.remove('dark-theme');
+    localStorage.setItem('theme', 'light');
+}
+
+if (storedTheme === 'dark') {
+    setDarkTheme();
+}
+
+themeSwitcher.forEach(switcher => {
+    switcher.addEventListener('click', (e) => {
+        e.preventDefault();
+        const theme = switcher.dataset.theme;
+        if (theme === 'dark') {
+            setDarkTheme();
+        } else {
+            setLightTheme();
+        }
+    });
+});

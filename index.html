@@ -23,7 +23,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body-theme">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="main-nav">
@@ -39,9 +39,18 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#mengapa">Mengapa Gabung?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mengapa">Kenapa Harus Gabung?</a></li>
                     <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-palette"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                            <li><a class="dropdown-item" href="#" data-theme="light"><i class="fas fa-sun me-2"></i>Light</a></li>
+                            <li><a class="dropdown-item" href="#" data-theme="dark"><i class="fas fa-moon me-2"></i>Dark</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -66,7 +75,7 @@
                 <div class="col-lg-6" data-aos="fade-right">
                     <h2 class="section-title">Lebih dari Sekedar Komunitas</h2>
                     <p><strong>K'mplang Salatiga</strong> adalah wadah bagi mahasiswa perantau dari Lampung yang menempuh pendidikan di Salatiga. Kami bukan hanya sekumpulan mahasiswa, tapi sebuah keluarga yang saling mendukung, berbagi tawa, dan menjaga semangat kebersamaan di tanah rantau.</p>
-                    <p>Nama "K'mplang" terinspirasi dari makanan khas Lampung, yang melambangkan kehangatan dan kebersamaan. Kami berharap, seperti kemplang yang selalu dinikmati bersama, komunitas ini menjadi tempat yang nyaman dan selalu dirindukan.</p>
+                    <p>Nama "K'mplang" <b>(Keluarga Mahasiswa Perantauan Lampung)</b> terinspirasi dari makanan khas Lampung, <i>Kemplang</i>, yang melambangkan kehangatan dan kebersamaan. Kami berharap, seperti kemplang yang selalu dinikmati bersama, komunitas ini menjadi tempat yang nyaman dan selalu dirindukan.</p>
                 </div>
                 <div class="col-lg-6 text-center" data-aos="fade-left">
                     <img src="/image/ins.png" class="img-fluid rounded-3 shadow-lg" alt="Kebersamaan Komunitas">
@@ -76,19 +85,19 @@
     </section>
 
     <!-- Mengapa Section -->
-    <section id="mengapa" class="py-5 bg-light">
+    <section id="mengapa" class="py-5">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Mengapa Harus Gabung?</h2>
-                <p class="lead">Temukan alasan mengapa K'mplang Salatiga adalah pilihan terbaikmu.</p>
+                <h2 class="section-title">Mengapa Harus Gabung K'mplang</h2>
+                <p class="lead">Alasan kalian harus join K'mplang.</p>
             </div>
             <div class="row">
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card h-100 text-center feature-card">
                         <div class="card-body">
                             <i class="fas fa-users fa-3x mb-3"></i>
-                            <h5 class="card-title">Keluarga Baru</h5>
-                            <p class="card-text">Dapatkan teman dan keluarga baru yang senasib sepenanggungan di perantauan.</p>
+                            <h5 class="card-title">Mendapatkan Keluarga Baru</h5>
+                            <p class="card-text">Dapatkan teman dan keluarga baru yang <i>sama-sama </i>berasal dari <b>Lampung</b> di perantauan.</p>
                         </div>
                     </div>
                 </div>
@@ -96,7 +105,7 @@
                     <div class="card h-100 text-center feature-card">
                         <div class="card-body">
                             <i class="fas fa-palette fa-3x mb-3"></i>
-                            <h5 class="card-title">Lestarikan Budaya</h5>
+                            <h5 class="card-title">Melestarikan Budaya Lampung Sai</h5>
                             <p class="card-text">Ikut serta dalam kegiatan budaya untuk menjaga dan memperkenalkan warisan Lampung.</p>
                         </div>
                     </div>
@@ -106,7 +115,7 @@
                         <div class="card-body">
                             <i class="fas fa-lightbulb fa-3x mb-3"></i>
                             <h5 class="card-title">Pengembangan Diri</h5>
-                            <p class="card-text">Asah soft skill dan leadership melalui berbagai program dan kegiatan organisasi.</p>
+                            <p class="card-text">Asah soft skill dan leadership melalui berbagai program dan kegiatan organisasi di dalam K'mplang.</p>
                         </div>
                     </div>
                 </div>
