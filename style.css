@@ -144,7 +144,7 @@ body {
     color: var(--light-text-color);
 }
 
-#tentang, #galeri, #pendaftaran {
+#tentang, #galeri, #pendaftaran, #program-kerja {
     background-color: var(--bg-light);
 }
 
@@ -226,14 +226,13 @@ body {
 
 
 .modal-content {
-    background-color: var(--card-bg-dark);
-    color: #fff;
-    border: 1px solid var(--border-color-dark);
-    border-radius: 10px;
+    background-color: var(--card-bg-light);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
 }
 
 .modal-header {
-    border-bottom: 1px solid var(--border-color-dark);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .modal-title {
@@ -243,6 +242,10 @@ body {
 
 .btn-close {
     filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+body.dark-theme .btn-close {
+    filter: none;
 }
 
 .modal-body img {
@@ -299,6 +302,56 @@ body {
 .form-control::placeholder {
     font-style: italic;
     color: var(--placeholder-color);
+}
+
+/* Program Kerja Modal */
+.proker-table {
+    color: var(--text-color);
+}
+
+.proker-table thead {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+.proker-table tbody tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.05);
+}
+
+body.dark-theme .proker-table tbody tr:nth-child(even) {
+    background-color: rgba(255,255,255,0.05);
+}
+
+@media (max-width: 992px) {
+    .proker-table thead {
+        display: none;
+    }
+
+    .proker-table, .proker-table tbody, .proker-table tr, .proker-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .proker-table tr {
+        margin-bottom: 15px;
+    }
+
+    .proker-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: 1px solid var(--border-color);
+    }
+
+    .proker-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
 }
 
 
