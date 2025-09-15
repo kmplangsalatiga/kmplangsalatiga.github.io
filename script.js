@@ -13,3 +13,22 @@ document.addEventListener('scroll', () => {
         nav.classList.remove('scrolled');
     }
 });
+
+// Gallery Modal Script
+const galleryModal = document.getElementById('galleryModal');
+galleryModal.addEventListener('show.bs.modal', event => {
+  // Button that triggered the modal
+  const triggerElement = event.relatedTarget;
+  
+  // Extract info from data-* attributes
+  const imageSrc = triggerElement.getAttribute('src');
+  const imageAlt = triggerElement.getAttribute('alt');
+  
+  // Update the modal's content.
+  const modalImage = galleryModal.querySelector('#modalImage');
+  const modalCaption = galleryModal.querySelector('#modalCaption');
+  
+  modalImage.src = imageSrc;
+  modalImage.alt = imageAlt;
+  modalCaption.textContent = imageAlt;
+});
