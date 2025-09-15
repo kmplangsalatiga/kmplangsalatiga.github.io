@@ -1,0 +1,151 @@
+:root {
+    --primary-color: #FFBF00; /* Amber/Gold */
+    --secondary-color: #DAA520; /* Goldenrod */
+    --text-color: #333;
+    --light-text-color: #f8f9fa;
+    --bg-light: #f8f9fa;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: #f9f9f9; /* Slightly off-white background */
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled {
+    background-color: rgba(15, 23, 42, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--secondary-color) !important;
+}
+
+/* --- Hero Section --- */
+#hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/image/thumb.jpg') no-repeat center center/cover;
+    color: var(--light-text-color);
+}
+
+#hero h1 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+#hero h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.btn-primary {
+    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 191, 0, 0.4);
+}
+
+/* --- Section Styles --- */
+.section-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.section-title-light {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--light-text-color);
+}
+
+/* --- Feature Cards --- */
+.feature-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.feature-card i {
+    color: var(--primary-color);
+}
+
+/* --- Gallery --- */
+.gallery-img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+/* --- Footer / Kontak --- */
+#kontak {
+    background-color: #0f172a; /* Deep blue-gray */
+}
+
+.social-icons .social-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons .social-icon:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+}
