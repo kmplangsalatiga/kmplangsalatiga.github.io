@@ -68,7 +68,7 @@ themeSwitcher.forEach(switcher => {
 
 const registrationForm = document.getElementById('registration-form');
 // Pastikan URL ini adalah URL Web App yang benar dari Google Apps Script Anda
-const scriptURL = 'https://script.google.com/macros/s/AKfycby52KN_eL5QNk0NV9_dgvK7EVHON64vOwKC79bfIV70TXr6pxlOqUsQM8drpbRXDDbAdw/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwjZegOb902lVuY-xfjQbjPLVWaLi-SpSba1RUq5I3FGa1-A3Ku03vKGMiXvkojz-MX_g/exec';
 
 registrationForm.addEventListener('submit', async (e) => {
     e.preventDefault(); // Mencegah form dari reload halaman
