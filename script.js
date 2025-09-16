@@ -65,11 +65,21 @@ themeSwitcher.forEach(switcher => {
 });
 
 
+
 const registrationForm = document.getElementById('registration-form');
+// Pastikan URL ini adalah URL Web App yang benar dari Google Apps Script Anda
+const scriptURL = 'https://script.google.com/macros/s/AKfycby52KN_eL5QNk0NV9_dgvK7EVHON64vOwKC79bfIV70TXr6pxlOqUsQM8drpbRXDDbAdw/exec';
 
-registrationForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+registrationForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Mencegah form dari reload halaman
 
+    
+    const submitButton = registrationForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.innerHTML;
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Mengirim Data...';
+
+    // 1. Mengumpulkan semua data dari form
     const nama = document.getElementById('nama').value;
     const nim = document.getElementById('nim').value;
     const asal = document.getElementById('asal').value;
@@ -78,11 +88,42 @@ registrationForm.addEventListener('submit', (e) => {
     const tanggalLahir = document.getElementById('tanggalLahir').value;
     const motivasi = document.getElementById('motivasi').value;
 
-    const message = `*MAU DAFTAR K'MPLANG SALATIGA KAK:  *\n\nNAMA: ${nama}\nNIM: ${nim}\nASAL: ${asal}\nFAKULTAS: ${fakultas}\nNOMOR WHATSAPP: ${whatsapp}\nTANGGAL LAHIR: ${tanggalLahir}\nMOTIVASI: ${motivasi}\n\n> @KmplangSalatiga`;
+    // Membuat objek data untuk dikirim ke Google Sheet
+    const formData = { nama, nim, asal, fakultas, whatsapp, tanggalLahir, motivasi };
 
-    const whatsappURL = `https://wa.me/6285225216552?text=${encodeURIComponent(message)}`; //nomor nya mas yohanes
+    try {
+        // 2. Mengirim data ke Google Spreadsheet di latar belakang
+        console.log("Mengirim data ke Google Sheet...");
+        await fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors', // Diperlukan untuk Apps Script
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        console.log("Data berhasil dikirim ke Google Sheet.");
+        alert(`Selamat bergabung ${nama}! Kamu akan dialihkan ke WhatsApp untuk konfirmasi.`);
+        
+    } catch (error) {
+        console.error('Error saat mengirim ke Google Sheet:', error);
+        // Jika gagal, beri tahu pengguna dan tetap lanjutkan ke WhatsApp
+        alert("Pendaftaran otomatis gagal. Mohon lanjutkan konfirmasi secara manual melalui WhatsApp.");
 
-    window.open(whatsappURL, '_blank');
+    } finally {
+        // 3. SELALU membuka link WhatsApp setelah mencoba mengirim data
+        console.log("Membuka Whatsapp");
+        
+        // Membuat pesan WhatsApp
+        const message = `*MAU DAFTAR K'MPLANG SALATIGA KAK:  *\n\nNAMA: ${nama}\nNIM: ${nim}\nASAL: ${asal}\nFAKULTAS: ${fakultas}\nNOMOR WHATSAPP: ${whatsapp}\nTANGGAL LAHIR: ${tanggalLahir}\nMOTIVASI: ${motivasi}\n\n> @KmplangSalatiga`;
+        const whatsappURL = `https://wa.me/6285225216552?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+
+
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonText;
+        registrationForm.reset();
+    }
 });
 
 
