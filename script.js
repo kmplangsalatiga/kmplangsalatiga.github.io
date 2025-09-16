@@ -75,11 +75,12 @@ registrationForm.addEventListener('submit', (e) => {
     const asal = document.getElementById('asal').value;
     const fakultas = document.getElementById('fakultas').value;
     const whatsapp = document.getElementById('whatsapp').value;
+    const tanggalLahir = document.getElementById('tanggalLahir').value;
     const motivasi = document.getElementById('motivasi').value;
 
-    const message = `*DAFTAR KMPLANG MINN*\n\nNAMA: ${nama}\nNIM: ${nim}\nASAL: ${asal}\nFAKULTAS: ${fakultas}\nNOMOR WHATSAPP: ${whatsapp}\nMOTIVASI: ${motivasi}\n\n> DaftarOnlineViaWebsiteKmplang`;
+    const message = `*MAU DAFTAR K'MPLANG SALATIGA KAK:  *\n\nNAMA: ${nama}\nNIM: ${nim}\nASAL: ${asal}\nFAKULTAS: ${fakultas}\nNOMOR WHATSAPP: ${whatsapp}\nTANGGAL LAHIR: ${tanggalLahir}\nMOTIVASI: ${motivasi}\n\n> @KmplangSalatiga`;
 
-    const whatsappURL = `https://wa.me/6285764175824?text=${encodeURIComponent(message)}`;
+    const whatsappURL = `https://wa.me/6285225216552?text=${encodeURIComponent(message)}`; //nomor nya mas yohanes
 
     window.open(whatsappURL, '_blank');
 });
