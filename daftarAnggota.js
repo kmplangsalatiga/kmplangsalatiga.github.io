@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
 
     let allAnggota = [];
+    const adminName = "Grateo Alfando Atmojo";
 
     async function fetchAnggota() {
         try {
@@ -45,16 +46,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayAnggota(anggotaList) {
         tableBody.innerHTML = '';
-        anggotaList.reverse();
+        
+        // Urutkan data terbaru di atas
+        let sortedList = [...anggotaList].reverse();
 
-        if (anggotaList.length === 0) {
+        // Cari dan pindahkan admin ke atas
+        const adminIndex = sortedList.findIndex(anggota => anggota.nama.trim() === adminName);
+        let adminAnggota = null;
+        if (adminIndex > -1) {
+            adminAnggota = sortedList.splice(adminIndex, 1)[0];
+        }
+
+        // Gabungkan kembali listnya dengan admin di paling atas jika ditemukan
+        const finalList = adminAnggota ? [adminAnggota, ...sortedList] : sortedList;
+
+        if (finalList.length === 0) {
             tableBody.innerHTML = '<tr><td colspan="4" class="text-center">Belum ada anggota yang mendaftar atau tidak ada hasil yang cocok.</td></tr>';
         } else {
-            anggotaList.forEach((anggota, index) => {
+            finalList.forEach((anggota, index) => {
+                const isAdmin = anggota.nama.trim() === adminName;
                 const row = `
                     <tr>
                         <td>${index + 1}</td>
-                        <td>${anggota.nama}</td>
+                        <td>
+                            ${anggota.nama}
+                            ${isAdmin ? '<span class="badge bg-primary ms-2">DEV</span>' : ''}
+                        </td>
                         <td>${anggota.fakultas}</td>
                         <td>${anggota.asal}</td>
                     </tr>
@@ -69,13 +86,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchInput.addEventListener('input', () => {
         const searchTerm = searchInput.value.toLowerCase();
+        
         const filteredAnggota = allAnggota.filter(anggota => {
+            // Jangan sertakan admin dalam pemfilteran biasa jika dia ada
+            if (anggota.nama.trim() === adminName) return true; 
+
             return (
                 anggota.nama.toLowerCase().includes(searchTerm) ||
                 anggota.fakultas.toLowerCase().includes(searchTerm) ||
                 anggota.asal.toLowerCase().includes(searchTerm)
             );
         });
+        
         displayAnggota(filteredAnggota);
     });
 
