@@ -1,6 +1,6 @@
-# Website Resmi KMPL Angsalatiga
+# AlfandoXeon
 
-Ini adalah repositori untuk website resmi Keluarga Mahasiswa dan Pelajar Lampung (KMPL) Angsalatiga. Website ini berfungsi sebagai pusat informasi, galeri kegiatan, dan media untuk memperkenalkan budaya Lampung kepada anggota dan masyarakat luas.
+Ini adalah repositori untuk website resmi Keluarga Mahasiswa dan Pelajar Lampung K'Mplangs-alatiga. Website ini berfungsi sebagai pusat informasi, galeri kegiatan, dan media untuk memperkenalkan budaya Lampung kepada anggota dan masyarakat luas.
 
 ## Tampilan Website
 
@@ -31,3 +31,4 @@ Jika Anda ingin berkontribusi pada pengembangan website ini, silakan lakukan lan
 5.  Buka **Pull Request**.
 
 Terima kasih atas kontribusi Anda!
+
